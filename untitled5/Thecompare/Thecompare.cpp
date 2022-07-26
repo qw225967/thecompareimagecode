@@ -25,7 +25,7 @@ map<int,int> Thecompare::getsameimage(){
     char theimagedirpath[1024];
     std::cin>>theimagedirpath;
 
-    strcat(theimagedirpath,"/foo-0%04d.jpeg");
+    strcat(theimagedirpath,"/foo-0%05d.jpeg");
     //============================输入内容
     int i;
     for (i = i_start; i < i_end; i++) {
@@ -38,10 +38,15 @@ map<int,int> Thecompare::getsameimage(){
 
         Mat srcImage1 = imread(str1);
         Mat srcImage2 = imread(str2);
+
+
         if (!srcImage1.data || !srcImage2.data)return tempmap;
-        Rect rect(100, 375, 200, 100);
+        Rect rect(150, 480, 400, 200);
         Mat image_roi1 = srcImage1(rect);
         Mat image_roi2 = srcImage2(rect);
+        imshow("效果图", image_roi1);
+        waitKey(0);
+
         imagetest c_imagetest;//图片对比对象
 
         if(c_imagetest.imageSubtract(image_roi1, image_roi2)){

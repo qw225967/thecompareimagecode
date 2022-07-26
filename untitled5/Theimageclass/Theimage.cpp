@@ -40,7 +40,9 @@ int imagetest::imageSubtract(Mat &image1, Mat &image2)
 
     //位深的改变
     absFrameDifferece.convertTo(absFrameDifferece, CV_8UC1, 1, 0);
-    //imshow("absFrameDifferece", absFrameDifferece);
+    imshow("absFrameDifferece", absFrameDifferece);
+    waitKey(0);
+
     Mat segmentation;
 
     //阈值处理（这一步很关键，要调好二值化的值）
@@ -55,7 +57,9 @@ int imagetest::imageSubtract(Mat &image1, Mat &image2)
     morphologyEx(segmentation, segmentation, MORPH_CLOSE, morphologyKernel, Point(-1, -1), 2, BORDER_REPLICATE);
 
     //显示二值化图片
-    //imshow("segmentation", segmentation);
+    imshow("segmentation", segmentation);
+    waitKey(0);
+
 
     //找边界
     vector< vector<Point> > contours;

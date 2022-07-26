@@ -6,6 +6,7 @@ set(OpenCV_DIRS /opt/homebrew/Cellar/opencv/4.5.4_3)
 set(OpenCV_LIBS ${OpenCV_DIRS}/lib)
 
 message(STATUS ${CMAKE_BUILD_TYPE})
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
 
@@ -22,15 +23,15 @@ target_link_libraries(
         opencv_core
         opencv_imgproc
         opencv_imgcodecs
-#        opencv_video
-#        opencv_highgui
-#        opencv_photo
-#        opencv_flann
-#        opencv_superres
-#        opencv_stitching
-#        opencv_ml
-#        opencv_video
-#        opencv_features2d
-#        opencv_calib3d
+        opencv_alphamat
+        opencv_video
+        opencv_highgui
+        opencv_photo
+        opencv_flann
+        opencv_superres
+        opencv_stitching
+        opencv_ml
+        opencv_features2d
+        opencv_calib3d
 #        opencv_objdetect
 )
