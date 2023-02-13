@@ -1,5 +1,5 @@
 //
-// Created by 方睿虔 on 2020/7/20.
+// Created by qw225967 on 2020/7/20.
 //
 #include "Thecompare.h"
 #include "../Theimageclass/Theimage.h"
